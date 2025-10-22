@@ -1,4 +1,5 @@
 import About from "@/components/main/About";
+import Experience from "@/components/main/Experience";
 import Introduction from "@/components/main/Introduction";
 import SocialLinks from "@/components/main/SocialLinks";
 
@@ -15,7 +16,7 @@ export default function Home() {
       </section>
 
       <section>
-
+        <Experience/>
       </section>
     </section>
   );
