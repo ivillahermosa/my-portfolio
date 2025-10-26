@@ -1,4 +1,6 @@
+import { experienceData } from "@/data/experience";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
 
 export default async function Experience() {
     return (
@@ -8,25 +10,49 @@ export default async function Experience() {
                     <CardTitle className="text-lg lg:text-xl font-bold">Experience</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0 pt-3 space-y-4">
-                    <p className="text-base leading-normal text-gray-700 dark:text-gray-300">
-                        I’m a <span className="font-semibold text-gray-900 dark:text-gray-100">Fullstack .NET Developer</span> with over 
-                        5+ years of experience building <span className="font-medium">scalable and reliable enterprise solutions</span>.
-                    </p>
+                    <div className="relative">
+                        {experienceData.map((exp, expIndex) => (
+                            <div key={expIndex} className="relative flex gap-4 md:gap-6 pb-8 last:pb-0">
+                                <div className="relative flex flex-col items-center w-6 flex-shrik-0">
+                                    {expIndex === 0 ? (
+                                        <div className="w-3 h-3 bg-slate-900 dark:bg-white rounded-full z-10 mt-2"/>
+                                    ) : (
+                                        <div className="w-3 h-3 border-2 border-slate-500 bg-white dark:bg-zinc-800 dark:border-white rounded-full z-10 mt-2"/>
+                                    )}
 
-                    <p className="text-base leading-normal text-gray-700 dark:text-gray-300">
-                        I’ve developed and managed various <span className="font-medium">backend services</span>, ranging from 
-                        standalone systems to <span className="font-medium">interconnected microservices</span>. 
-                        Building <span className="font-medium">RESTful APIs</span> integrated with both 
-                        <span className="font-medium"> web and desktop applications</span>.
-                    </p>
+                                    <div className="absolute top-4 left-1/2 -translate-x-1/2 w-0.5 bg-slate-200" 
+                                        style={expIndex === 0 ? 
+                                            {  height: 'calc(100% + 2rem)'} : { height: 'calc(100% - 1rem)' }}/>
+                                </div>
 
-                    <p className="text-base leading-normal text-gray-700 dark:text-gray-300">
-                        Currently, I’m expanding my expertise into <span className="font-medium">DevOps</span>, 
-                        where I’ve implemented <span className="font-medium">CI/CD pipelines</span> for staging 
-                        and production environments. Additionally, I’m building a strong foundation in 
-                        <span className="font-medium"> Generative AI</span> and exploring tools that enhance 
-                        <span className="font-medium"> developer productivity and automation</span>.
-                    </p>
+                                <div className="flex-1 min-w-0 ">
+                                    <div className="flex w-full flex-col sm:flex-row mb-4">
+                                        <div className="sm:flex-[0_0_70%] lg:flex-[0_0_75%]">
+                                            <h3 className="text-lg font-semibold mb-1">{exp.title}</h3>                                    
+                                            <p className="text-base text-slate-700 dark:text-slate-300 mb-2">{exp.company}</p>
+                                        </div>
+
+                                        <div className="flex sm:justify-end sm:items-start items-center mt-2 sm:mt-0">
+                                            <Badge variant="outline" className="text-xs font-normal border-slate-300 text-slate-600 dark:text-slate-200">
+                                                {exp.period}
+                                            </Badge>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-3">
+                                        {exp.description.map((desc, descIndex) => (
+                                            <div key={descIndex} className="flex gap-2">
+                                                <span className="text-slate-900 dark:text-white font-bold mt-0.5">•</span>
+                                                <p className="text-slate-600 dark:text-slate-300 leading-relaxed flex-1">
+                                                {desc}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </CardContent>
             </div>
         </Card>
