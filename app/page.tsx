@@ -21,7 +21,7 @@ export default function Home() {
         <About/>
       </section>
 
-      <section className="flex flex-col lg:flex-row lg:items-stretch gap-4">
+      <section className="flex flex-col lg:flex-row lg:items-stretch lg:h-full gap-4">
         <div className="lg:w-[65%] flex flex-col">
           <Experience/>
         </div>

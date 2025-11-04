@@ -1,4 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { techstacksData } from "@/data/techstacks";
 
 export default async function TechStacks() {
     return (
@@ -8,25 +10,24 @@ export default async function TechStacks() {
                     <CardTitle className="text-lg lg:text-xl font-bold">Tech Stacks</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0 pt-3 space-y-4">
-                    <p className="text-base leading-normal text-gray-700 dark:text-gray-300">
-                        I’m a <span className="font-semibold text-gray-900 dark:text-gray-100">Fullstack .NET Developer</span> with over 
-                        5+ years of experience building <span className="font-medium">scalable and reliable enterprise solutions</span>.
-                    </p>
-
-                    <p className="text-base leading-normal text-gray-700 dark:text-gray-300">
-                        I’ve developed and managed various <span className="font-medium">backend services</span>, ranging from 
-                        standalone systems to <span className="font-medium">interconnected microservices</span>. 
-                        Building <span className="font-medium">RESTful APIs</span> integrated with both 
-                        <span className="font-medium"> web and desktop applications</span>.
-                    </p>
-
-                    <p className="text-base leading-normal text-gray-700 dark:text-gray-300">
-                        Currently, I’m expanding my expertise into <span className="font-medium">DevOps</span>, 
-                        where I’ve implemented <span className="font-medium">CI/CD pipelines</span> for staging 
-                        and production environments. Additionally, I’m building a strong foundation in 
-                        <span className="font-medium"> Generative AI</span> and exploring tools that enhance 
-                        <span className="font-medium"> developer productivity and automation</span>.
-                    </p>
+                    <div className="relative">
+                        {techstacksData.map((stack, stackIndex) => (
+                            <div key={stackIndex} className="mb-6 last:mb-0">
+                                <h3 className="text-md font-semibold mb-2">{stack.title}</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {stack.technologies.map((tech, techIndex) => (
+                                        <Badge 
+                                            key={techIndex} 
+                                            variant="secondary" 
+                                            className="text-xs font-normal border-slate-300 text-slate-600 dark:text-slate-200"
+                                        >
+                                            {tech}
+                                        </Badge>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </CardContent>
             </div>
         </Card>
