@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import AnimatedCard from "@/components/AnimatedCard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,12 +60,14 @@ export default function RootLayout({
           <main className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12 py-4">
             {children}
           </main>
-          <footer className="mx-auto max-w-screen-xl flex flex-col items-center px-4 sm:px-8 lg:px-16 py-4">
-            <p>&copy; 2025 Ivan Villahermosa. All rights reserved.</p>
-            <nav>
-              <a href="/privacy">Privacy Policy</a> |
-              <a href="/terms"> Terms of Service</a>
-            </nav>
+          <footer className="mx-auto max-w-screen-xl px-4 sm:px-8 lg:px-16 py-4">
+            <AnimatedCard delay={0.6} className="w-full text-center text-sm text-gray-500 dark:text-gray-400">
+              <p>&copy; 2025 Ivan Villahermosa. All rights reserved.</p>
+              <nav>
+                <a href="/privacy">Privacy Policy</a> |
+                <a href="/terms"> Terms of Service</a>
+              </nav>
+            </AnimatedCard>
           </footer>
         </ThemeProvider>
         
