@@ -21,13 +21,17 @@ export default function Home() {
         <About/>
       </section>
 
-      <section className="flex flex-col md:flex-row md:items-stretch gap-4">
-        <div className="md:w-[65%] flex flex-col">
+      <section className="flex flex-col lg:flex-row lg:items-stretch gap-4">
+        <div className="lg:w-[65%] flex flex-col">
           <Experience/>
         </div>
-        <div className="md:w-[35%] flex flex-col gap-4">
-          <RecentProjects/>
-          <TechStacks/>
+        <div className="lg:w-[35%] flex flex-col gap-4">
+          <div className="flex-1">
+            <RecentProjects/> 
+          </div>
+          <div className="flex-1">
+            <TechStacks/>
+          </div>
         </div>
       </section>
     </section>

@@ -11,6 +11,7 @@ export const experienceData: ExperienceDTO[] = [
         company: "Perpetual Help Community Cooperative",
         period: "Oct 2023 - Present",
         description: [
+            "Managed and monitored core systems to ensure smooth operations, regularly reviewing logs for errors and performing updates or fixes when needed.",
             "Leading the implementation of GitLab CI/CD pipelines to automate build, test, and deployment processes, resulting in a 30% reduction in deployment time and improved code quality.",
             "Designed and implemented caching and resilience strategies to optimize payment processing via a third-party API.",
             "Introduced and collaborated on the adoption of a internal online communication platform, streamlining team interactions and project management.",

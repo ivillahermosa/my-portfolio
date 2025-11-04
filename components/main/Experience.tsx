@@ -27,7 +27,7 @@ export default async function Experience() {
 
                                 <div className="flex-1 min-w-0 ">
                                     <div className="flex w-full flex-col sm:flex-row mb-4">
-                                        <div className="sm:flex-[0_0_70%] lg:flex-[0_0_75%]">
+                                        <div className="sm:flex-[0_0_70%] md:flex-[0_0_75%]">
                                             <h3 className="text-lg font-semibold mb-1">{exp.title}</h3>                                    
                                             <p className="text-base text-slate-700 dark:text-slate-300 mb-2">{exp.company}</p>
                                         </div>

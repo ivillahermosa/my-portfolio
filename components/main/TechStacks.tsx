@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 export default async function TechStacks() {
     return (
-        <Card>
+        <Card className="h-full">
             <div className="px-4 pb-3"> 
                 <CardHeader className="p-0">
                     <CardTitle className="text-lg lg:text-xl font-bold">Tech Stacks</CardTitle>

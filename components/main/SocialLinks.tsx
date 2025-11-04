@@ -12,7 +12,7 @@ export default async function SocialLinks() {
                         hover:bg-blue-600 text-white dark:text-white cursor-pointer">
                         <SendIconFilled className="h-5 w-5 flex-shrink-0"/>
                         <span className="text-base hidden md:inline font-semibold">
-                            Get in Touch via Email
+                            Send a message via Email
                         </span>
                         <span className="text-sm md:hidden font-semibold">Contact Me</span>
                     </Button>
@@ -22,9 +22,9 @@ export default async function SocialLinks() {
                         hover:border-white transition-colors duration-200">
                         <DownloadIcon className="h-5 w-5 flex-shrink-0" />
                         <span className="text-base hidden md:inline font-semibold">
-                            Download My Resume (PDF)
+                            Download Resume
                         </span>
-                        <span className="text-sm md:hidden font-semibold">Resume</span>
+                        <span className="text-sm md:hidden font-semibold">Get Resume</span>
                     </Button>
                 </div>
                 <div className="flex md:justify-end items-center">
