@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import AnimatedCard from "@/components/AnimatedCard";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,6 +60,7 @@ export default function RootLayout({
         <ThemeProvider>
           <main className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12 py-4">
             {children}
+            <Analytics />
           </main>
           <footer className="mx-auto max-w-screen-xl px-4 sm:px-8 lg:px-16 py-4">
             <AnimatedCard delay={0.6} className="w-full text-center text-sm text-gray-500 dark:text-gray-400">
