@@ -10,22 +10,30 @@ export default async function About() {
                 <CardContent className="p-0 pt-3 space-y-4">
                     <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
                         I’m a <span className="font-semibold text-gray-900 dark:text-gray-100">Fullstack .NET Developer</span> with over 
-                        5+ years of experience building <span className="font-medium">scalable and reliable enterprise solutions</span>.
+                        6+ years of experience building <span className="font-medium">scalable and reliable enterprise solutions</span>.
                     </p>
 
                     <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                        I’ve developed and managed various <span className="font-medium">backend services</span>, ranging from 
-                        standalone systems to <span className="font-medium">interconnected microservices</span>. 
-                        Building <span className="font-medium">RESTful APIs</span> integrated with both 
-                        <span className="font-medium"> web and desktop applications</span>.
+                        I work mainly with <span className="font-medium">C# and the Microsoft .NET stack</span>, building backend APIs 
+                        and connecting them with <span className="font-medium">third-party services and payment gateways</span>
+                        to deliver reliable, integrated systems.
                     </p>
 
                     <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                        Currently, I’m expanding my expertise into <span className="font-medium">DevOps</span>, 
-                        where I’ve implemented <span className="font-medium">CI/CD pipelines</span> for staging 
-                        and production environments. Additionally, I’m building a strong foundation in 
-                        <span className="font-medium"> Generative AI</span> and exploring tools that enhance 
-                        <span className="font-medium"> developer productivity and automation</span>.
+                        On the frontend, I also use <span className="font-medium">React</span> and 
+                        <span className="font-medium"> TypeScript</span>  to deliver clean, responsive, and modern user experiences that align seamlessly with backend services. 
+                        Additionally, I have hands-on experience developing <span className="font-medium">WPF desktop applications</span> and <span className="font-medium">creating
+                        automation tools </span> to streamline business operations — from database backups to real-time notifications and data migrations.
+                    </p>
+
+                    <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                        I thrive in <span className="font-medium">Agile environments</span>, value <span className="font-medium">clean code </span> 
+                        and <span className="font-medium">solid architecture</span>, and continuously grow my knowledge in 
+                        <span className="font-medium"> modern software design</span> and <span className="font-medium">cloud-native systems</span>. 
+                        Currently, I’m focusing on deepening my expertise in <span className="font-medium">software architecture</span>, 
+                        <span className="font-medium"> cloud technologies</span>, <span className="font-medium">DevOps practices</span> and 
+                        <span className="font-medium"> Artificial Intelligence</span> — aiming to build solutions that drive 
+                        <span className="font-medium"> real business impact</span>.
                     </p>
                 </CardContent>
             </div>

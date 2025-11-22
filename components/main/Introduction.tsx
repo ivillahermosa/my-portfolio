@@ -12,7 +12,7 @@ export default async function Introduction() {
                             IVAN VILLAHERMOSA
                         </h1>
                         <p className="text-base lg:text-lg tracking-tight mb-2">
-                            Software Engineer &nbsp;/&nbsp; Full Stack .NET Developer
+                            Full Stack .NET Developer &nbsp;/&nbsp; Software Engineer
                         </p>
                     </header>
                 </CardContent>

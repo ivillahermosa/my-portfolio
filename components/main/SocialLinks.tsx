@@ -12,7 +12,7 @@ export default async function SocialLinks() {
                         hover:bg-blue-600 text-white dark:text-white cursor-pointer">
                         <SendIconFilled className="h-5 w-5 flex-shrink-0"/>
                         <span className="text-base hidden md:inline font-semibold">
-                            Send a message via Email
+                            Get in Touch
                         </span>
                         <span className="text-sm md:hidden font-semibold">Contact Me</span>
                     </Button>
