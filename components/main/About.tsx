@@ -15,12 +15,12 @@ export default async function About() {
 
                     <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
                         I work mainly with <span className="font-medium">C# and the Microsoft .NET stack</span>, building backend APIs 
-                        and connecting them with <span className="font-medium">third-party services and payment gateways</span>
+                        and connecting them with <span className="font-medium">third-party services and payment gateways </span>
                         to deliver reliable, integrated systems.
                     </p>
 
                     <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                        On the frontend, I also use <span className="font-medium">React</span> and 
+                        On the frontend, I use <span className="font-medium">React</span> and 
                         <span className="font-medium"> TypeScript</span>  to deliver clean, responsive, and modern user experiences that align seamlessly with backend services. 
                         Additionally, I have hands-on experience developing <span className="font-medium">WPF desktop applications</span> and <span className="font-medium">creating
                         automation tools </span> to streamline business operations — from database backups to real-time notifications and data migrations.
@@ -29,7 +29,10 @@ export default async function About() {
                     <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
                         I thrive in <span className="font-medium">Agile environments</span>, value <span className="font-medium">clean code </span> 
                         and <span className="font-medium">solid architecture</span>, and continuously grow my knowledge in 
-                        <span className="font-medium"> modern software design</span> and <span className="font-medium">cloud-native systems</span>. 
+                        <span className="font-medium"> modern software design</span> and <span className="font-medium">cloud-native systems</span>.
+                    </p>
+                    
+                    <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
                         Currently, I’m focusing on deepening my expertise in <span className="font-medium">software architecture</span>, 
                         <span className="font-medium"> cloud technologies</span>, <span className="font-medium">DevOps practices</span> and 
                         <span className="font-medium"> Artificial Intelligence</span> — aiming to build solutions that drive 

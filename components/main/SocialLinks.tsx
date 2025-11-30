@@ -4,13 +4,18 @@ import { Button } from "../ui/button";
 import { DownloadIcon } from "../icons/DownloadIcon";
 import { ThemeToggle } from "../ui/ThemeToggle";
 import { SendIconFilled } from "../icons/SendIconFilled";
+import { useRouter } from "next/navigation";
 
 export default function SocialLinks() {
+    const router = useRouter();
+    
     return (
         <div className="w-full h-full mx-auto px-1">
             <div className="flex flex-row md:flex-col-reverse justify-between gap-2 h-full">
                 <div className="flex md:flex-col-reverse md:items-stretch items-center justify-between gap-2">
-                    <Button className="flex items-center gap-2 min-w-0 flex-1 p-1.5 !px-4 bg-blue-500 
+                    <Button 
+                        onClick={() => router.push("/contact")}
+                        className="flex items-center gap-2 min-w-0 flex-1 p-1.5 !px-4 bg-blue-500 
                         hover:bg-blue-600 text-white dark:text-white cursor-pointer">
                         <SendIconFilled className="h-5 w-5 flex-shrink-0"/>
                         <span className="text-base hidden md:inline font-semibold">
