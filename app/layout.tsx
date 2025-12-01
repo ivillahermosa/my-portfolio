@@ -65,10 +65,6 @@ export default function RootLayout({
           <footer className="mx-auto max-w-screen-xl px-4 sm:px-8 lg:px-16 py-4">
             <AnimatedCard delay={0.6} className="w-full text-center text-sm text-gray-500 dark:text-gray-400">
               <p>&copy; 2025 Ivan Villahermosa. All rights reserved.</p>
-              <nav>
-                <a href="/privacy">Privacy Policy</a> |
-                <a href="/terms"> Terms of Service</a>
-              </nav>
             </AnimatedCard>
           </footer>
         </ThemeProvider>
