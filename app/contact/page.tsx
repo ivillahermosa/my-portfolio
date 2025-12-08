@@ -6,7 +6,6 @@ import { BackButton } from '@/components/ui/back';
 import { contactLinks } from '@/data/contactlinks';
 import { Copy } from 'lucide-react';
 import React from 'react';
-import 'react-tooltip/dist/react-tooltip.css'
 import { toast } from 'sonner';
 
 export default function ContactPage() {
