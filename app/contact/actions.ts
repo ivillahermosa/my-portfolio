@@ -10,6 +10,18 @@ import { headers } from "next/headers";
 export async function submitContactForm(
     data: ContactFormData
 ): Promise<{ success: boolean; errors?: Record<string, string> }> {
+    // Validate
+    const result = contactSchema.safeParse(data);
+    if (!result.success) {
+        const errors: Record<string, string> = {};
+
+        result.error.issues.forEach((issue) => {
+            errors[issue.path[0] as string] = issue.message;
+        });
+
+        return { success: false, errors };
+    }
+ 
     // Identify use by IP
     const ip = 
         (await headers()).get("x-forwarded-for")?.split(",")[0] ??
@@ -23,18 +35,6 @@ export async function submitContactForm(
             success: false,
             errors: { form: "Too many requests. Please try again later." },
         };
-    }
-
-    // Validate
-    const result = contactSchema.safeParse(data);
-    if (!result.success) {
-        const errors: Record<string, string> = {};
-
-        result.error.issues.forEach((issue) => {
-            errors[issue.path[0] as string] = issue.message;
-        });
-
-        return { success: false, errors };
     }
 
     // Sanitize

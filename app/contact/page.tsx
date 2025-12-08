@@ -16,7 +16,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="mx-auto max-w-7xl p-4">
+    <main className="mx-auto max-w-7xl md:p-4">
       <div className="mx-auto py-4">
           <AnimatedCard delay={0.01}>          
             <BackButton/>
@@ -26,10 +26,10 @@ export default function ContactPage() {
             <div className='space-y-8'>
               <AnimatedCard delay={0.1}> 
                 <div>   
-                  <h1 className="text-4xl font-bold mb-4">
+                  <h1 className="text-2xl md:text-4xl font-bold mb-4">
                     Get In Touch
                   </h1>
-                  <p>
+                  <p className='text-base'>
                       I'm actively seeking new opportunities. Let's connect and discuss how I can contribute to your team.
                   </p>
                 </div>
@@ -56,10 +56,10 @@ export default function ContactPage() {
                         className={`group flex items-center gap-2 p-2 rounded-xl shadow-md border-1 transition-all`}
                       >
                         <div className='flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center'>
-                            <link.icon className="w-6 h-6" />
+                            <link.icon className="w-5 h-5" />
                         </div>
-                        <span className='font-medium flex-1'>{link.text}</span>
-                        <link.righticon className={link.classname} />
+                        <span className='text-sm md:text-base font-medium flex-1'>{link.text}</span>
+                        <link.righticon className={`${link.classname}`}/>
                       </a>
                     ))}
                   </div>
