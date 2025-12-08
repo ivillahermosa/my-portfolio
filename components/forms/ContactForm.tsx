@@ -33,10 +33,11 @@ export default function ContactForm() {
 
         if (!result.success) {
             setErrors(result.errors || {});
-            console.log(result.errors);
 
             if (errors?.form && errors.form.length > 1) {
                 toast.warning("Too many requests. Please try again later.");
+            } else {
+                toast.warning("Please check your entries and try again.")
             }
 
             return;

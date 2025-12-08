@@ -15,8 +15,7 @@ export default function SocialLinks() {
                 <div className="flex md:flex-col-reverse md:items-stretch items-center justify-between gap-2">
                     <Button 
                         onClick={() => router.push("/contact")}
-                        className="flex items-center gap-2 min-w-0 flex-1 p-1.5 !px-4 bg-blue-500 
-                        hover:bg-blue-600 text-white dark:text-white cursor-pointer">
+                        className="flex items-center gap-2 min-w-0 flex-1 p-1.5 !px-4 cursor-pointer">
                         <SendIconFilled className="h-5 w-5 flex-shrink-0"/>
                         <span className="text-base hidden md:inline font-semibold">
                             Get in Touch
