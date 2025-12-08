@@ -1,14 +1,20 @@
+'use client';
+
 import AnimatedCard from '@/components/AnimatedCard';
+import ContactForm from '@/components/forms/ContactForm';
 import { BackButton } from '@/components/ui/back';
-import { Button } from '@/components/ui/button';
-import { InputGroup, InputGroupInput } from '@/components/ui/input-group';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { contactLinks } from '@/data/contactlinks';
-import { ArrowLeft } from 'lucide-react';
+import { Copy } from 'lucide-react';
 import React from 'react';
+import 'react-tooltip/dist/react-tooltip.css'
+import { toast } from 'sonner';
 
 export default function ContactPage() {
+  const handleCopy = (textToCopy : string) => {
+    navigator.clipboard.writeText(textToCopy);
+
+    toast.info("Email has been copied to your clipboard.");
+  };
 
   return (
     <main className="mx-auto max-w-7xl p-4">
@@ -31,29 +37,7 @@ export default function ContactPage() {
               </AnimatedCard>
               <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 <AnimatedCard delay={0.2}> 
-                  <div className='rounded-2xl shadow-lg border p-6'>
-                    <div className='space-y-6'>
-                      <div className='space-y-2'>
-                        <Label htmlFor="name">Name</Label>
-                        <InputGroup>
-                          <InputGroupInput placeholder='James Smith'/>
-                        </InputGroup>
-                      </div>
-                      <div className='space-y-2'>
-                        <Label htmlFor="email">Email</Label>
-                        <InputGroup>
-                          <InputGroupInput placeholder='james@example.com'/>
-                        </InputGroup>
-                      </div>
-                      <div className='space-y-2'>
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea className='h-30' placeholder='Type your message here.'/>
-                      </div>
-                      <Button>
-                        Send Message
-                      </Button>
-                    </div>
-                  </div>
+                  <ContactForm />
                 </AnimatedCard>
 
                 <AnimatedCard delay={0.3}> 
@@ -62,15 +46,21 @@ export default function ContactPage() {
                       <a 
                         key={index}
                         href={link.href}
-                        target='_blank'
-                        rel='noopener noreferrer'
+                        onClick={(e) => {
+                          if (link.righticon === Copy) {
+                            e.preventDefault(); // ✅ stop navigation
+                            handleCopy(link.text);
+                          }
+                        }}
+                        target={link.righticon !== Copy ? "_blank" : undefined}
+                        rel={link.righticon !== Copy ? "noopener noreferrer" : undefined}
                         className={`group flex items-center gap-2 p-2 rounded-xl shadow-md border-1 transition-all`}
                       >
-                        <div className='flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform'>
+                        <div className='flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center'>
                             <link.icon className="w-6 h-6" />
                         </div>
                         <span className='font-medium flex-1'>{link.text}</span>
-                        <ArrowLeft className='w-5 h-5 rotate-180 group-hover:translate-x-1 transition-transform' />
+                        <link.righticon className={link.classname} />
                       </a>
                     ))}
                   </div>

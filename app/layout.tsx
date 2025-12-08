@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import AnimatedCard from "@/components/AnimatedCard";
 import { Analytics } from "@vercel/analytics/next";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,6 +61,7 @@ export default function RootLayout({
         <ThemeProvider>
           <main className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12 py-4">
             {children}
+            <Toaster position="top-center"/>
             <Analytics />
           </main>
           <footer className="mx-auto max-w-screen-xl px-4 sm:px-8 lg:px-16 py-4">
