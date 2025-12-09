@@ -6,7 +6,6 @@ import { InputGroup, InputGroupInput } from "../ui/input-group";
 import { ContactFormData } from "@/types/contact";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-import { submitContactForm } from "@/app/contact/actions";
 import { toast } from "sonner";
 
 
@@ -28,8 +27,14 @@ export default function ContactForm() {
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setErrors({});
+        
+        const response = await fetch('/api/contact', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(form)
+        })
 
-        const result = await submitContactForm(form);
+        const result = await response.json();
 
         if (!result.success) {
             setErrors(result.errors || {});

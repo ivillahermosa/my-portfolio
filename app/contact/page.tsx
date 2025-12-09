@@ -1,20 +1,10 @@
-'use client';
-
 import AnimatedCard from '@/components/AnimatedCard';
+import ContactList from '@/components/contact/ContactList';
 import ContactForm from '@/components/forms/ContactForm';
 import { BackButton } from '@/components/ui/back';
-import { contactLinks } from '@/data/contactlinks';
-import { Copy } from 'lucide-react';
 import React from 'react';
-import { toast } from 'sonner';
 
 export default function ContactPage() {
-  const handleCopy = (textToCopy : string) => {
-    navigator.clipboard.writeText(textToCopy);
-
-    toast.info("Email has been copied to your clipboard.");
-  };
-
   return (
     <main className="mx-auto max-w-7xl md:p-4">
       <div className="mx-auto py-4">
@@ -40,29 +30,7 @@ export default function ContactPage() {
                 </AnimatedCard>
 
                 <AnimatedCard delay={0.3}> 
-                  <div className='space-y-3'>
-                    {contactLinks.map((link, index) => (
-                      <a 
-                        key={index}
-                        href={link.href}
-                        onClick={(e) => {
-                          if (link.righticon === Copy) {
-                            e.preventDefault(); // ✅ stop navigation
-                            handleCopy(link.text);
-                          }
-                        }}
-                        target={link.righticon !== Copy ? "_blank" : undefined}
-                        rel={link.righticon !== Copy ? "noopener noreferrer" : undefined}
-                        className={`group flex items-center gap-2 p-2 rounded-xl shadow-md border-1 transition-all`}
-                      >
-                        <div className='flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center'>
-                            <link.icon className="w-5 h-5" />
-                        </div>
-                        <span className='text-sm md:text-base font-medium flex-1'>{link.text}</span>
-                        <link.righticon className={`${link.classname}`}/>
-                      </a>
-                    ))}
-                  </div>
+                  <ContactList />
                 </AnimatedCard>
             </div>
             </div>        
