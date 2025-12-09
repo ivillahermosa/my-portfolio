@@ -5,7 +5,6 @@ import { contactRateLimiter } from "@/lib/ratelimit/contactLimiter";
 import { sanitizeInput } from "@/lib/sanitization/sanitize";
 import { contactSchema } from "@/lib/validation/contactSchema";
 import { ContactFormData } from "@/types/contact";
-import { headers } from "next/headers";
 
 export async function submitContactForm(
     data: ContactFormData,
