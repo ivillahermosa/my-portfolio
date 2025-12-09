@@ -40,17 +40,17 @@ export async function submitContactForm(
     };
 
 //    // Send email via Resend
-//     await resend.emails.send({
-//         from: "Contact Form <onboarding@resend.dev>",
-//         to: process.env.CONTACT_RECEIVER_EMAIL!,
-//         subject: `Portfolio Message from ${sanitized.name}`,
-//         html: `
-//         <p><strong>Name:</strong> ${sanitized.name}</p>
-//         <p><strong>Email:</strong> ${sanitized.email}</p>
-//         <p><strong>Message:</strong></p>
-//         <p>${sanitized.message}</p>
-//         `,
-//     });
+    await resend.emails.send({
+        from: "Contact Form <onboarding@resend.dev>",
+        to: process.env.CONTACT_RECEIVER_EMAIL!,
+        subject: `Portfolio Message from ${sanitized.name}`,
+        html: `
+        <p><strong>Name:</strong> ${sanitized.name}</p>
+        <p><strong>Email:</strong> ${sanitized.email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${sanitized.message}</p>
+        `,
+    });
 
     return { success: true };
 }
