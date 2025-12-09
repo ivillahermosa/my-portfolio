@@ -10,6 +10,7 @@ export async function submitContactForm(
     data: ContactFormData,
     ip: string
 ): Promise<{ success: boolean; errors?: Record<string, string> }> {
+    const { JSDOM } = await import("jsdom"); 
     // Validate
     const result = contactSchema.safeParse(data);
     if (!result.success) {
@@ -39,18 +40,18 @@ export async function submitContactForm(
         message: sanitizeInput(data.message)
     };
 
-   // Send email via Resend
-    await resend.emails.send({
-        from: "Contact Form <onboarding@resend.dev>",
-        to: process.env.CONTACT_RECEIVER_EMAIL!,
-        subject: `Portfolio Message from ${sanitized.name}`,
-        html: `
-        <p><strong>Name:</strong> ${sanitized.name}</p>
-        <p><strong>Email:</strong> ${sanitized.email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${sanitized.message}</p>
-        `,
-    });
+//    // Send email via Resend
+//     await resend.emails.send({
+//         from: "Contact Form <onboarding@resend.dev>",
+//         to: process.env.CONTACT_RECEIVER_EMAIL!,
+//         subject: `Portfolio Message from ${sanitized.name}`,
+//         html: `
+//         <p><strong>Name:</strong> ${sanitized.name}</p>
+//         <p><strong>Email:</strong> ${sanitized.email}</p>
+//         <p><strong>Message:</strong></p>
+//         <p>${sanitized.message}</p>
+//         `,
+//     });
 
     return { success: true };
 }
