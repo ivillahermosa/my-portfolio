@@ -6,8 +6,9 @@ export async function POST(
     req: NextRequest
 ) {
   try {
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "anonymous";
     const data = await req.json();
-    const result = await submitContactForm(data);
+    const result = await submitContactForm(data, ip);
 
     return NextResponse.json(result);
   } catch (error) {
@@ -16,4 +17,8 @@ export async function POST(
       { status: 500 }
     );
   }
+}
+
+export async function GET() {
+  return NextResponse.json({ message: "This API only accepts POST requests" });
 }

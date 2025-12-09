@@ -8,7 +8,8 @@ import { ContactFormData } from "@/types/contact";
 import { headers } from "next/headers";
 
 export async function submitContactForm(
-    data: ContactFormData
+    data: ContactFormData,
+    ip: string
 ): Promise<{ success: boolean; errors?: Record<string, string> }> {
     // Validate
     const result = contactSchema.safeParse(data);
@@ -22,11 +23,6 @@ export async function submitContactForm(
         return { success: false, errors };
     }
  
-    // Identify use by IP
-    const ip = 
-        (await headers()).get("x-forwarded-for")?.split(",")[0] ??
-            "anonymous";
-
     const { success: rateLimitPassed } =
         await contactRateLimiter.limit(ip);
     
