@@ -10,7 +10,6 @@ export async function submitContactForm(
     data: ContactFormData,
     ip: string
 ): Promise<{ success: boolean; errors?: Record<string, string> }> {
-    const { JSDOM } = await import("jsdom"); 
     // Validate
     const result = contactSchema.safeParse(data);
     if (!result.success) {
